@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{145E1E7D-C68E-4E23-B8B3-45F0C13D4BFC}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>飞机大战</RootNamespace>
+    <AssemblyName>飞机大战</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Back\bg2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Plane\plane1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Enemy\Enemy1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Enemy\Enemy2.png" />
+    <Resource Include="Images\Enemy\Enemy3_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Blood\bloodUI_2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Blood\bloodUI_1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Score.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Bomb\10000.png" />
+    <Resource Include="Images\Bomb\10001.png" />
+    <Resource Include="Images\Bomb\10002.png" />
+    <Resource Include="Images\Bomb\10003.png" />
+    <Resource Include="Images\Bomb\10004.png" />
+    <Resource Include="Images\Bomb\10005.png" />
+    <Resource Include="Images\Bomb\10006.png" />
+    <Resource Include="Images\Bomb\10007.png" />
+    <Resource Include="Images\Bomb\10008.png" />
+    <Resource Include="Images\Bomb\10009.png" />
+    <Resource Include="Images\Bomb\10010.png" />
+    <Resource Include="Images\Bomb\10011.png" />
+    <Resource Include="Images\Bomb\10012.png" />
+    <Resource Include="Images\Bomb\10013.png" />
+    <Resource Include="Images\Bomb\10014.png" />
+    <Resource Include="Images\Bomb\10015.png" />
+    <Resource Include="Images\Bomb\10016.png" />
+    <Resource Include="Images\Bomb\10017.png" />
+    <Resource Include="Images\Bomb\10018.png" />
+    <Resource Include="Images\Bomb\10019.png" />
+    <Resource Include="Images\Bomb\10020.png" />
+    <Resource Include="Images\Bomb\10021.png" />
+    <Resource Include="Images\Bomb\10022.png" />
+    <Resource Include="Images\Bomb\10023.png" />
+    <Resource Include="Images\Bomb\10024.png" />
+    <Resource Include="Images\Bomb\10025.png" />
+    <Resource Include="Images\Bomb\10026.png" />
+    <Resource Include="Images\Bomb\10027.png" />
+    <Resource Include="Images\Bomb\10028.png" />
+    <Resource Include="Images\Bomb\10029.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Bomb\10030.png" />
+    <Resource Include="Images\Bomb\10031.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Bullet\Ammo_enemy3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Enemy\Enemy4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Bullet\Ammo_enemy4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Bullet\Ammo_enemy5.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Enemy\Enemy3_2.png" />
+    <Resource Include="Images\Enemy\Enemy3_3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Back\bg1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MyBomb\10000.png" />
+    <Resource Include="Images\MyBomb\10001.png" />
+    <Resource Include="Images\MyBomb\10002.png" />
+    <Resource Include="Images\MyBomb\10003.png" />
+    <Resource Include="Images\MyBomb\10004.png" />
+    <Resource Include="Images\MyBomb\10005.png" />
+    <Resource Include="Images\MyBomb\10006.png" />
+    <Resource Include="Images\MyBomb\10007.png" />
+    <Resource Include="Images\MyBomb\10008.png" />
+    <Resource Include="Images\MyBomb\10009.png" />
+    <Resource Include="Images\MyBomb\10010.png" />
+    <Resource Include="Images\MyBomb\10011.png" />
+    <Resource Include="Images\MyBomb\10012.png" />
+    <Resource Include="Images\MyBomb\10013.png" />
+    <Resource Include="Images\MyBomb\10014.png" />
+    <Resource Include="Images\MyBomb\10015.png" />
+    <Resource Include="Images\MyBomb\10016.png" />
+    <Resource Include="Images\MyBomb\10017.png" />
+    <Resource Include="Images\MyBomb\10018.png" />
+    <Resource Include="Images\MyBomb\10019.png" />
+    <Resource Include="Images\MyBomb\10020.png" />
+    <Resource Include="Images\MyBomb\10021.png" />
+    <Resource Include="Images\MyBomb\10022.png" />
+    <Resource Include="Images\MyBomb\10023.png" />
+    <Resource Include="Images\MyBomb\10024.png" />
+    <Resource Include="Images\MyBomb\10025.png" />
+    <Resource Include="Images\MyBomb\10026.png" />
+    <Resource Include="Images\MyBomb\10027.png" />
+    <Resource Include="Images\MyBomb\10028.png" />
+    <Resource Include="Images\MyBomb\10029.png" />
+    <Resource Include="Images\MyBomb\10030.png" />
+    <Resource Include="Images\MyBomb\10031.png" />
+    <Resource Include="Images\MyBomb\10032.png" />
+    <Resource Include="Images\MyBomb\10033.png" />
+    <Resource Include="Images\MyBomb\10034.png" />
+    <Resource Include="Images\MyBomb\10035.png" />
+    <Resource Include="Images\MyBomb\10036.png" />
+    <Resource Include="Images\MyBomb\10037.png" />
+    <Resource Include="Images\MyBomb\10038.png" />
+    <Resource Include="Images\MyBomb\10039.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\MyBomb\10040.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Enemy\Boss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Bullet\Ammo1.png" />
+    <Resource Include="Images\Bullet\Ammo2.png" />
+    <Resource Include="Images\Bullet\Ammo3.png" />
+    <Resource Include="Images\Bullet\Ammo4.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Plus\Cure.png" />
+    <Resource Include="Images\Plus\Killing.png" />
+    <Resource Include="Images\Plus\MaxPower.png" />
+    <Resource Include="Images\Plus\PowerUp.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Plane\Killing.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\warning.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\UI\CG1.png" />
+    <Resource Include="Images\UI\CG2.png" />
+    <Resource Include="Images\UI\CG3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\KillCount.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\UI\UI.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Bullet\BossAmmo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Bullet\BossAmmo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\UI\UI_start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\UI\CG_roll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\UI\UI_start_on.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
