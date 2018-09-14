@@ -1,0 +1,219 @@
+一、方法重载：
+1.什么是方法重载？
+    重载指的是同一个类中有两个或多个名字相同但是参数的类型和顺序不同的方法 
+构成重载的条件：
+(1)在同一个类中；
+(2)方法名相同；
+(3)参数列表不同。
+   ①  参数的类型不同
+   ②  参数的个数不同
+   ③  参数的个数相同时他们的先后顺序不同
+
+2.为什么要进行方法的重载？
+    对于同一个方法也许你有不同的需求，比如做饭  给孩子做，给丈夫和孩子做的不一样，但又都是做饭这个方法。就用不同的参数列表。
+public static cook(Sun sun)
+{
+}
+public static cook(Sun sun,Husband husband)
+{
+}
+
+    重载的目的就是方便程序员,比如，WriteLine()这个函数是用来在控制台界面上输出的，当你输出的是整数的时候是用这个函数，当你输出一个字符串的时候还是用这个函数。这个就是重载的运用，根据你传入参数的不同，自动找到匹配的函数（函数名都相同）.
+public static void WriteLine();
+public static void WriteLine(bool value);
+public static void WriteLine(char value);
+......
+再举个例子，例如求最大值：
+（1）、求两个值的最大值
+public int max(int a,int b);
+{}
+（2）、求三个值的最大值
+public int max(int a,int b,int c);
+{}
+......
+求n个值的最大值。
+对于这个最大值函数，应该统一的，如果不进行重载的话，那么有很多个函数名，一旦函数过多，记忆之类的都不好，不利于开发！
+
+3.重载的例子：
+        
+        public void Show()//(1)
+        {
+            Console.WriteLine("Nothing");
+        }
+        public void Show(int number)//(2)
+        {
+            Console.WriteLine(number);
+        }
+        /*
+        public int Show(int number)//(3)
+        {
+            Console.WriteLine(number);
+            return number % 5;
+        }
+        */
+    对于上面的代码，(1)没有参数，（2）使用了一个int类型的参数，(1)和(2)之间就构成了重载。(2)与(3)相比仅仅返回值不同，虽然重载不关心返回值的不同，但是在C#中不允许存在方法名和参数列表相同、返回值不同的方法，所以(2)和（3）不能同时存在于代码中，(3)如果不注释掉上面的代码是没有办法通过编译的。
+
+       static void Main(string[] args)
+        {
+            String s = "4321";
+            Show(s);
+            Object o = "123";
+            Show(o);
+        }
+        static void Show(string s)
+        {
+            Console.WriteLine("String");
+        }
+        static void Show(Object o)
+        {
+            Console.WriteLine("Object");
+        }
+
+注意：
+    系统会认为是同一个方法的两种情况，这样的两个方法不可以在同一个类里，否则系统会报错。
+    ⑴返回类型不同，方法名和参数个数、顺序、类型都相同的两个方法
+    ⑵返回类型相同，方法名和参数的个数、顺序、类型都相同的两个方法，但是参数的名字不同
+
+例：
+   ① public  void A()
+       {
+            Console.WriteLine("aaaaaaaaaaaa");
+       }
+   ② public void A(string s, int a)
+       { //正确的方法重载
+          Console.WriteLine("ccccccccccc");
+       }
+   ③  public void A(string a, int s)
+       {
+          Console.WriteLine("ccccccccccc");
+       }
+   ④  protected void A(int a,string s) 
+       {
+         Console.WriteLine("bbbbbbbbbb");
+       }
+分析：
+  ①与②是方法重载
+  ②与③和④比较一下：②与③是同一个方法，因为他们只是参数的名字不同，②与④是正确的方法重载，因为他们参数的顺序不同
+
+
+       public void Fun()
+        {
+            Console.WriteLine("I am F");
+        }
+       public  void Fun(int i)
+        {
+            Console.WriteLine("I am F,i={0}",i);
+        }
+
+
+二.字符串
+   
+1.字符串常用操作
+string是引用类型
+
+string str1="";//有引用
+string str1=null;//没有引用
+String.IsNullOrEmpty();//判断字符串是否为空或者是否为空值
+
+str.length:获得字符串中的字符个数,也叫字符串的长度
+
+string可以看做是char的“只读”数组。char c = s[1]。
+例子：遍历输出string中的每个元素。
+string str="asjdjaj";
+foreach(char  c  in str)
+{
+Console.WriteLine( c);
+}
+
+for(int i=0;i<str.Length;i++)
+{
+Console.WriteLine(str[i]);
+}
+
+    C#中字符串有一个重要的特性："不可变性"，字符串一旦声明就不再可以改变。所以只能通过索引来读取指定位置的char，不能对指定位置的char进行修改。
+
+    谁说字符串不可变？string s = "abc";s="123"，s这不是变了吗?
+    图解略！
+    要区分变量名和变量指向的值的区别。程序中可以有很多字符串，然后由字符串变量指向他们，变量可以指向其他的字符串，但是字符串本身没有变化。字符串不可变性指的是内存中的字符串不可变，而不是变量不变。
+    
+    字符串内部使用char数组来保存字符串的内容，数据中的每一位存放一个字符，char数组的长度也就是字符串的长度.
+    如果要对char进行修改，那么就必须创建一个新的字符串，用s.ToCharArray()方法得到字符串的char数组，对数组进行修改后，调用new string(char[])这个构造函数来创建char数组的字符串。一旦字符串被创建，那么char数组的修改也不会造成字符串的变化。
+
+例：将字符串中的A替换为a。
+
+string str="sNJJaAAAXS";
+char[] chs=str.ToCharArray();
+for(int i=0;i<chs.Length;i++)
+{
+  if(chs[i]=='A')
+   {
+    chs[i]='a';
+   }
+}
+string str1=new string(chs); 
+
+
+2.字符串常用方法：
+返回类型	                属性或方法	        作用
+int	           Length	             获取字符串的长度
+int	           IndexOf(string)	     判断传入字符串在原字符串中第一次出现的位置
+int	           LastIndexOf(string)	     判断传入字符串在原字符串中最后一次出现的位置
+bool	           StartsWith(string)	     判断原字符串是否以传入字符串开头
+bool	           EndsWith(string) 	     判断原字符串是否以传入字符串结尾
+String	           ToLower())	             获取小写字符串
+String	           ToUpper()	             获取大写字符串
+String	           Substring (int)	     截取字符串，从传入参数位置开始截取到末尾
+String	           Substring (int,int)	     截取字符串，从参数1位置开始，截取参数2个字符
+String	           Trim ()	             去掉字符串首尾的空格
+String[]	   Split (String)	     将原字符串按照传入参数分割为字符串数组
+bool               Equals                    两个字符串进行区分大小写的比较
+string             Join（string,char[]）     把指定数组中的元素按一定的分隔符输出成字符串
+         
+
+3.字符串与其他类型的转换
+     
+    在实际应用中，我们经常会遇到字符串类型与基本类型的转换操作。基本类型转换为字符串类型很简单，我们之前是通过+运算来实现的
+    字符串可以进行加法运算，作用是连接两个字符串，也可以将字符串与基本类型变量做加法运算，系统会先将基本类型转换为字符串型后进行连接操作。
+
+例：
+        string s = "10";
+        int i = int.Parse(s);
+        float f = float.Parse(s);
+        double d = double.Parse(s);
+        short sh = short.Parse(s);
+        byte b = byte.Parse(s);
+
+注意：
+（1）如果字符串中的内容不是整数格式，在使用int.Parse(string)方法转换时程序会报错。其他格式同理。
+
+
+作业：
+1.用户输入字符串“2008-08-08”，输出：2008年08月08日。
+2.用户输入“2009年9月5日”，输出：二零零九年九月五日
+3.定义一个方法，输入一个正整数，判断它是否是回文数，当输入0时，则退出程序，否则继续循环执行程序（回文数：是指读一个自然数，从正方读和反方向读，结果一样。例，646，1551，891232198等都是回文数）
+4.输出1000以内所有的回文数
+5.定义一个方法，判断一个数是否是“降序数”，此程序是循环执行的，当输入0时结束。
+6.写一个方法，输入一个正整数，判断它是否是素数，如不是则输出其所有正约数
+7.定义一个方法，一个有10个元素的一维数组a，在键盘上是输入时没有大小次序，但是存入数组时要按由小到大的顺序存放。
+8.验证email地址（IndexOf、EndsWith、Split,Contains）
+ * 代码思路：使用以下规则对email地址的格式进行简单验证
+ * 规则1. 必须出现字符.和@
+ * 规则2. @只能出现一次
+ * 规则3. @必须出现在.的前面，并且@和.之前必须有字符
+ * 规则4. email必须以.com作为结尾
+9. 9.过滤不文明词汇 （Split、IndexOf、Contains、Length、ToCharArray）
+ * 代码思路：首先使用一个字符串变量记录所有的不文明词汇，用逗号分隔。
+ * 接下来判断文本中是否包含不文明词汇（忽略大小写比较），如果包含，
+ * 则用”****“代替，并继续检查直到不包含不文明词汇为止
+10.编一个程序，输入a,b,c的值，定义一个方法，求出一元二次方程a*x*x+b*x+c=0的二个根。( dt=b*b-4*a*c;dt<0,无解; x1 = (-b + Math.Sqrt(dt)) / (2 * a); x2 = (-b - Math.Sqrt(dt)) / (2 * a);)
+11.字符串的操作：
+（1）判断传入字符串在原字符串中第一次出现的位置
+（2）判断传入字符串在原字符串中最后一次出现的位置
+（3）判断原字符串是否以传入字符串开头
+（4）判断原字符串是否以传入字符串结尾
+（5）获取小写字符串
+（6）获取大学字符串
+（7）截取字符串，从传入参数位置开始截取到末尾
+（8）截取字符串，从参数1位置开始，截取参数2个字符
+（9）去掉字符串首尾的空格
+（10）将原字符串按照传入参数分割为字符串数组

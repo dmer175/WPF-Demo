@@ -1,0 +1,13 @@
+D:\Myvs\LOL考眼力\LOL考眼力\bin\Debug\LOL考眼力.exe.config
+D:\Myvs\LOL考眼力\LOL考眼力\bin\Debug\LOL考眼力.exe
+D:\Myvs\LOL考眼力\LOL考眼力\bin\Debug\LOL考眼力.pdb
+D:\Myvs\LOL考眼力\LOL考眼力\obj\Debug\LOL考眼力.csprojResolveAssemblyReference.cache
+D:\Myvs\LOL考眼力\LOL考眼力\obj\Debug\MainWindow.baml
+D:\Myvs\LOL考眼力\LOL考眼力\obj\Debug\MainWindow.g.cs
+D:\Myvs\LOL考眼力\LOL考眼力\obj\Debug\App.g.cs
+D:\Myvs\LOL考眼力\LOL考眼力\obj\Debug\LOL考眼力_MarkupCompile.cache
+D:\Myvs\LOL考眼力\LOL考眼力\obj\Debug\LOL考眼力.g.resources
+D:\Myvs\LOL考眼力\LOL考眼力\obj\Debug\LOL考眼力.Properties.Resources.resources
+D:\Myvs\LOL考眼力\LOL考眼力\obj\Debug\LOL考眼力.csproj.GenerateResource.Cache
+D:\Myvs\LOL考眼力\LOL考眼力\obj\Debug\LOL考眼力.exe
+D:\Myvs\LOL考眼力\LOL考眼力\obj\Debug\LOL考眼力.pdb
